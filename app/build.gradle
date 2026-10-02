@@ -1,0 +1,13 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'org.stellarproximology.trident'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'org.stellarproximology.trident'
+        minSdk 26
+        targetSdk 35
+        versionCode 2
+        versionName '0.2.0'
+    }
+}
