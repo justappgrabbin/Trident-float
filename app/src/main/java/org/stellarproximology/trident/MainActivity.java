@@ -24,7 +24,8 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         s.setAllowFileAccess(true);
         web.addJavascriptInterface(new Bridge(), "TridentAndroid");
         web.loadUrl("file:///android_asset/index.html");
-        setContentView(web);\n        if (Build.VERSION.SDK_INT >= 26) startForegroundService(new Intent(this, BridgeForegroundService.class)); else startService(new Intent(this, BridgeForegroundService.class));
+        setContentView(web);
+        if (Build.VERSION.SDK_INT >= 26) startForegroundService(new Intent(this, BridgeForegroundService.class)); else startService(new Intent(this, BridgeForegroundService.class));
     }
 
     @Override public void onInit(int status) {
@@ -68,7 +69,9 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                 }
             });
         }
-        @JavascriptInterface public void accessibilitySettings() { runOnUiThread(() -> startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))); }\n        @JavascriptInterface public void startHands() { runOnUiThread(() -> { if (Build.VERSION.SDK_INT >= 26) startForegroundService(new Intent(MainActivity.this, BridgeForegroundService.class)); else startService(new Intent(MainActivity.this, BridgeForegroundService.class)); }); }\n        @JavascriptInterface public void speak(String text) {
+        @JavascriptInterface public void accessibilitySettings() { runOnUiThread(() -> startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))); }
+        @JavascriptInterface public void startHands() { runOnUiThread(() -> { if (Build.VERSION.SDK_INT >= 26) startForegroundService(new Intent(MainActivity.this, BridgeForegroundService.class)); else startService(new Intent(MainActivity.this, BridgeForegroundService.class)); }); }
+        @JavascriptInterface public void speak(String text) {
             runOnUiThread(() -> {
                 if (tts == null) pendingSpeech = text; else speakNow(text);
             });
