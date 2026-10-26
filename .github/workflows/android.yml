@@ -2,7 +2,7 @@ name: Build Trident APK
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ main, 'trial/trident-lcm-klein-phone' ]
 jobs:
   build:
     runs-on: ubuntu-latest
