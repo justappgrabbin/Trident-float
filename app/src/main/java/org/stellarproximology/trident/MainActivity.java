@@ -53,7 +53,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         if (web.canGoBack()) web.goBack(); else super.onBackPressed();
     }
 
-    public class Bridge {
+    public class Bridge {\n        @JavascriptInterface public String semanticReply(String text) {\n            try { return SemanticTrialEngine.reply(text); }\n            catch (Exception e) { return "Semantic trial error: " + e.getMessage(); }\n        }\n        @JavascriptInterface public String semanticObserve(String text) {\n            try { return SemanticTrialEngine.observe(text).toString(); }\n            catch (Exception e) { return "{\\\"error\\\":\\\"Invalid semantic input\\\"}"; }\n        }
         @JavascriptInterface public void attach() {
             runOnUiThread(() -> {
                 Intent i = new Intent(Intent.ACTION_OPEN_DOCUMENT);
