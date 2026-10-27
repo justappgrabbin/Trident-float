@@ -16,7 +16,7 @@
 const auto=()=>localStorage.autoSpeak==='1';document.getElementById('autospeak').checked=auto();
 function go(id,b){['chat','inbox','goals','digest'].forEach(x=>document.getElementById(x).classList.toggle('hidden',x!==id));document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.getElementById('composer').style.display=id==='chat'?'flex':'none'}
 function toggleChat(){let c=document.getElementById("composer"),b=c.querySelector(".grow");c.classList.toggle("expanded");b.textContent=c.classList.contains("expanded")?"↙":"↗";b.setAttribute("aria-label",c.classList.contains("expanded")?"Shrink chat":"Expand chat")}
-function send(){let i=document.getElementById('msg'),v=i.value.trim();if(!v)return;let d=document.createElement('div');d.className='bubble me';d.textContent=v;document.querySelector('.messages').appendChild(d);i.value=''}
+async function send(){let i=document.getElementById('msg'),v=i.value.trim();if(!v)return;let d=document.createElement('div');d.className='bubble me';d.textContent=v;document.querySelector('.messages').appendChild(d);i.value='';if(window.TridentAndroid&&typeof TridentAndroid.semanticContact==='function'){TridentAndroid.semanticContact(v);return}addTridentMessage('Synthia runtime is unavailable in this build. Message was not processed.');}
 function attach(){if(window.TridentAndroid)TridentAndroid.attach()}
 function speakText(t){if(window.TridentAndroid)TridentAndroid.speak(String(t))}
 function stopSpeak(){if(window.TridentAndroid)TridentAndroid.stopSpeaking()}
