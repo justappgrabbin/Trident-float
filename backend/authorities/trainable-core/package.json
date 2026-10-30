@@ -1,0 +1,7 @@
+{
+  "name":"pure-synthia-trainable-assembly",
+  "version":"0.4.1",
+  "type":"module",
+  "scripts":{"test":"node tests/run.mjs","demo":"node examples/demo.mjs"}
+}
+

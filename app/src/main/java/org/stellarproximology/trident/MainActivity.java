@@ -8,6 +8,10 @@ import android.net.*;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import java.util.Locale;
+import java.io.*;
+import java.net.*;
+import java.nio.charset.StandardCharsets;
+import org.json.JSONObject;
 
 public class MainActivity extends Activity implements TextToSpeech.OnInitListener {
     private WebView web;
@@ -76,8 +80,26 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                 if (tts == null) pendingSpeech = text; else speakNow(text);
             });
         }
+        @JavascriptInterface public void request(String id, String route, String payload) {
+            new Thread(() -> {
+                try {
+                    String result = SynthiaClient.request(route, payload);
+                    deliverResponse(id, result, null);
+                } catch (Exception error) {
+                    deliverResponse(id, null, "Synthia backend unavailable or failed: " + error.getMessage());
+                }
+            }, "synthia-request").start();
+        }
+        private void deliverResponse(String id, String result, String error) {
+            runOnUiThread(() -> {
+                if (web != null) web.evaluateJavascript("settleSynthia(" + JSONObject.quote(id) + ","
+                    + (result == null ? "null" : JSONObject.quote(result)) + ","
+                    + (error == null ? "null" : JSONObject.quote(error)) + ")", null);
+            });
+        }
         @JavascriptInterface public void stopSpeaking() {
             runOnUiThread(() -> { if (tts != null) tts.stop(); });
         }
     }
 }
+

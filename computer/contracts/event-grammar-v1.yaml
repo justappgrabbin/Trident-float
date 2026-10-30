@@ -1,0 +1,59 @@
+# SynthAI Shared Event Grammar v1
+# Canonical address grammar (user-ruled): planetary, dimension, gate, line,
+# color, tone, base, degree, minute, second, arc, zodiac, house. 13 dims, no extras.
+# Axis/Scope/OriginContext are NOT address fields.
+
+event:
+  event_id: string
+  timestamp: string
+  actor_id: string
+  actor_type: enum          # user | mirrored_agent | application | process | automaton | device | system
+  target_id: string | null
+  event_type: enum          # user_action, agent_action, message, project_action, experiment_action,
+                            # tool_execution, file_ingest, build, network_connection, state_transition,
+                            # graph_activation, application_launch, movement, observation, verification,
+                            # failure, recovery
+  input: object | null
+  actor_address: address | null
+  target_address: address | null
+  event_address: address | null
+  pre_state: object | null
+  context: object | null
+  process_id: string | null
+  provider: string | null
+  address_provider: string | null
+  state_provider: string | null
+  result: object | null
+  result_status: enum       # success | failure | partial | unknown
+  post_state: object | null
+  observable_effect: string | null
+  related_events: [string]
+  parents: [string]
+  trajectory_id: string
+  evidence: { kind: enum, ref: string, summary: string }
+
+address:                    # CANONICAL — exactly these 13 fields
+  planetary: string | null
+  dimension: string | null  # D1..D5
+  gate: int | null
+  line: int | null
+  color: int | null
+  tone: int | null
+  base: int | null
+  degree: int | null
+  minute: int | null
+  second: int | null
+  arc: int | null
+  zodiac: string | null
+  house: int | null
+
+entity_record:
+  identity: string
+  origin: string
+  baseline: object
+  current_state: object
+  trajectory: [string]
+
+evidence_status: enum       # hypothesis | observation | correlation | candidate_mechanism | supported_result | rejected_result | unknown
+relational_class: enum      # co_occurrence | repeated_co_occurrence | time_lagged | network_propagation | shared_context_effect | candidate_causal | experimentally_tested | unsupported | unknown
+

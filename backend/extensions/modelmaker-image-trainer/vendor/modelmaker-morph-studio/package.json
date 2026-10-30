@@ -1,0 +1,2 @@
+{"name":"modelmaker-morph","private":true,"type":"module","scripts":{"test":"node --test tests/*.test.mjs"}}
+
