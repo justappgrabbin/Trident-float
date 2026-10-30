@@ -1,0 +1,32 @@
+[
+  {
+    "id": "Movement",
+    "vowel": "I",
+    "theme": "Individuality / defining / creation",
+    "motto": "I Define"
+  },
+  {
+    "id": "Evolution",
+    "vowel": "A",
+    "theme": "Mind / memory / development",
+    "motto": "I Remember"
+  },
+  {
+    "id": "Being",
+    "vowel": "E",
+    "theme": "Body / matter / existence",
+    "motto": "I Am"
+  },
+  {
+    "id": "Design",
+    "vowel": "U",
+    "theme": "Structure / ego / design",
+    "motto": "I Design"
+  },
+  {
+    "id": "Space",
+    "vowel": "O",
+    "theme": "Personality / form / perception",
+    "motto": "I Think"
+  }
+]

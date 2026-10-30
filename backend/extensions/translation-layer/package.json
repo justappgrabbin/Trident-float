@@ -1,0 +1,11 @@
+{
+  "name": "@synthia/translation-layer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pure-JS, offline, sovereign fallback runtime for Python/Ruby/Lua/C sources, registered through the execution-spine runtime adapter slot.",
+  "main": "src/index.mjs",
+  "scripts": { "test": "node --test tests/" },
+  "dependencies": {}
+}
+

@@ -1,11 +1,8 @@
-# Trident Float
+# Trident Float + SynthAi Computer
 
-Standalone phone-first Android shell for Trident.
+Phone-first Android Trident, mounted inside SynthAi Computer with the full
+Synthia Generative Address & Morphology service and 19 Klein tools.
 
-Main surfaces: Chat, Inbox, Goals, Digest.
-Utilities: Preview, Terminal, Settings.
-Cynthia Talk: Android on-device text-to-speech with per-message Speak, replay/stop, Auto-speak, Inbox/Digest read-aloud.
-Inbox is Trident -> user only. Files are given to Trident through Chat.
-Every delivered artifact is preview-first.
-
-GitHub Actions builds a debug APK automatically on every push and also supports manual workflow dispatch.
+See [INTEGRATION.md](INTEGRATION.md) for source pins, phone setup, verification,
+and current limitations. Run `npm start` for the Computer server and `npm test`
+for the integration checks. Build the Android app with `gradle :app:assembleDebug`.

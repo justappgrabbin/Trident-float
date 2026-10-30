@@ -1,0 +1,9 @@
+const $=s=>document.querySelector(s);let activeAddresses=[];
+async function api(path,body){const r=await fetch(path,{method:body?'POST':'GET',headers:{'content-type':'application/json'},body:body?JSON.stringify(body):undefined});const j=await r.json();if(!r.ok)throw new Error(j.error||r.statusText);return j}
+function morphView(m){const s=m?.summary??m?.derivation?.output?.summary??m?.morphology?.inward?.summary??null;if(!s)return;$('#energy').textContent=s.dominantEnergy??'none';$('#graphs').textContent=s.activeGraphCount??0;$('#connections').textContent=s.connectionCount??0;$('#morph').textContent=JSON.stringify({dominantEnergy:s.dominantEnergy,dominantStrength:s.dominantStrength,pods:s.pods,graphIds:s.graphIds},null,2)}
+function turn(role,text,meta=''){const d=document.createElement('div');d.className=`turn ${role}`;d.textContent=text;if(meta){const m=document.createElement('div');m.className='meta';m.textContent=meta;d.appendChild(m)}$('#chat').appendChild(d);$('#chat').scrollTop=$('#chat').scrollHeight}
+async function audit(){try{const a=await api('/api/audit');$('#status').textContent=a.ok?'live · morphology mounted':'wiring issue'}catch(e){$('#status').textContent='offline'}}
+$('#loadAddresses').onclick=async()=>{try{activeAddresses=JSON.parse($('#addresses').value);const out=await api('/api/addresses',{addresses:activeAddresses});morphView(out.morphology);turn('synthia',`Loaded ${out.count} addressed states.`,`field: ${out.morphology?.summary?.dominantEnergy??'no active graph'}`)}catch(e){turn('synthia',String(e))}};
+$('#chatForm').onsubmit=async e=>{e.preventDefault();const text=$('#message').value.trim();if(!text)return;$('#message').value='';turn('user',text);try{const out=await api('/api/chat',{message:text,addresses:activeAddresses});turn('synthia',out.utterance,`dominant energy: ${out.morphology?.inward?.summary?.dominantEnergy??'none'}`);morphView(out.morphology?.inward)}catch(err){turn('synthia',String(err))}};
+audit();
+

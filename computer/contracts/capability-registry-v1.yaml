@@ -1,0 +1,33 @@
+# SynthAI Capability Registry Schema v1
+capability_entry:
+  capability: string
+  description: string
+  providers: [provider_entry]
+
+provider_entry:
+  provider_id: string
+  capability: string
+  repository: string
+  branch_ref: string
+  source_artifact: string
+  status: enum              # NOT_FOUND | PRESENT | PARTIALLY_WIRED | WIRED | VERIFIED
+  environment_requirements: [string]
+  inputs: object
+  outputs: object
+  dependencies: [string]
+  persistence_behavior: string   # none | local | supabase | hybrid
+  verification_evidence: [{ kind, ref, summary, timestamp }]  # REQUIRED for WIRED/VERIFIED
+  last_verified: string | null
+  known_limitations: [string]
+  lineage: { derived_from: [string], supersedes_for_scope: [{superseded, scope}] }
+  selection_hints: { locality: enum, performance_notes: string, preferred_when: string }
+
+routing_decision:
+  request_id: string
+  required_capability: string
+  candidate_providers: [string]
+  selected_provider: string
+  selection_rationale: string
+  timestamp: string
+  outcome_event_id: string | null
+

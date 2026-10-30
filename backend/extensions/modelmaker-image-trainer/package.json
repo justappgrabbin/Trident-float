@@ -1,0 +1,2 @@
+{ "name": "@synthia/modelmaker-image-trainer", "version": "0.1.0", "private": true, "type": "module", "main": "src/index.mjs", "scripts": { "test": "node --test tests/ && cd vendor/modelmaker-morph-studio && node --test tests/*.test.mjs", "samples": "node scripts/make-samples.mjs" }, "dependencies": {} }
+

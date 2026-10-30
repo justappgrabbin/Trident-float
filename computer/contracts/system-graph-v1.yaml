@@ -1,0 +1,9 @@
+# SynthAI System Graph Schema v1
+node_types: [repository, branch, commit, archive, release, application, service, module, process, automaton, tool, agent, user, project, experiment, database, table, function, address, capability, provider, runtime_instance, device, physical_effector, verification_record]
+
+edge_types: [CONTAINS, IMPORTS, CALLS, IMPLEMENTS, DEPENDS_ON, PROVIDES, CONSUMES, SPAWNS, MOUNTS, PERSISTS_TO, OBSERVES, CONTROLS, ROUTES_TO, DERIVED_FROM, SUPERSEDES_FOR_SCOPE, TESTS, VERIFIES, EMITS, RECEIVES]
+
+node: { id, type, identity, origin: {repository, branch, commit, archive_path}, status, properties }
+edge: { from, to, type, properties }
+# Storage: nodes.jsonl + edges.jsonl locally; optional Supabase sync.
+
