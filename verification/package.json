@@ -1,0 +1,20 @@
+{
+  "name": "Trident",
+  "apk": "app/build/outputs/apk/debug/app-debug.apk",
+  "bytes": 506133926,
+  "sha256": "be61a1d54b6e266a874978863a4d1740b673223dcb7792477a7accd0f11ef499",
+  "signatureVerified": true,
+  "zipAligned": true,
+  "identity": "package: name='org.stellarproximology.trident' versionCode='4' versionName='0.4.0' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'",
+  "physicalAndroidDeviceTested": false,
+  "nativeLibraries": [
+    "lib/arm64-v8a/libtrident_model.so"
+  ],
+  "model": {
+    "name": "Qwen2.5-Coder-0.5B-Instruct Q4_K_M",
+    "bundled": true,
+    "asset": "assets/models/qwen-coder-q4.gguf",
+    "bytes": 491400064,
+    "sha256": "1d9614638d18024d0fbb36575a15f1302a3adf044df10345688ec4f6e1c4ff32"
+  }
+}

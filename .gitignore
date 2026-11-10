@@ -1,0 +1,12 @@
+.gradle/
+**/build/
+.cxx/
+**/.cxx/
+local.properties
+vendor/
+app/src/main/assets/models/*.gguf
+app/src/main/assets/models/*.partial
+
+*.class
+*.hprof
+__pycache__/
