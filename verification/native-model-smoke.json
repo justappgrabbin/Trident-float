@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "runtime": "actual llama.cpp JNI, same model GGUF as Android APK, Linux x86_64 host",
+  "checks": [
+    "plan",
+    "file-read",
+    "complete corrected source delivery",
+    "generated code returns correct answer",
+    "original preserved"
+  ],
+  "actions": [
+    {
+      "action": "plan",
+      "name": "",
+      "content": "Read calc.py and deliver a complete corrected calc.py file to Inbox. Preserve the original."
+    },
+    {
+      "action": "read_file",
+      "name": "calc.py",
+      "content": ""
+    },
+    {
+      "action": "save_artifact",
+      "name": "calc.py",
+      "content": "def add(a, b):\n    return a + b\n"
+    },
+    {
+      "action": "done",
+      "name": "",
+      "content": "The complete corrected calc.py file is now in Inbox. I have not run it."
+    }
+  ]
+}

@@ -2,7 +2,7 @@ name: Build Trident APK
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ main, codex/trident-qwen-20261110 ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,6 +15,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
+      - run: bash scripts/prepare-model.sh
       - run: gradle :app:assembleDebug
       - uses: actions/upload-artifact@v4
         with:
