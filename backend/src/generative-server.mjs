@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { bootTridentComputer } from '../../computer/TridentHost.mjs';
 import { createAgentService } from './agent-service.mjs';
+import { analyse, encode, decode, fingerprint, nearest } from './address-engine.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(here, '..');
@@ -101,6 +102,35 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'POST' && req.url === '/api/browser') {
       const body = await readBody(req);
       return json(res, 200, synthia.browser(body.input ?? body, { ...(body.context ?? {}), addresses: body.addresses ?? body.context?.addresses }));
+    }
+    if (req.method === 'POST' && req.url.startsWith('/api/address/')) {
+      const body = await readBody(req);
+      const text = String(body.text ?? '');
+      if (text.length > 200_000) return json(res, 413, { ok: false, error: 'text exceeds 200000 characters' });
+      if (req.url === '/api/address/analyse') {
+        const analysis = analyse(text);
+        return json(res, 200, {
+          ok: true,
+          fingerprint: analysis.fingerprint,
+          length: analysis.length,
+          blocks: analysis.blocks.length,
+          addresses: analysis.tokens.slice(0, 512).map(t => t.address),
+          truncated: analysis.tokens.length > 512,
+        });
+      }
+      if (req.url === '/api/address/encode') return json(res, 200, { ok: true, ids: Array.from(encode(text)) });
+      if (req.url === '/api/address/decode') {
+        if (!Array.isArray(body.ids)) return json(res, 400, { ok: false, error: 'ids must be an array of positional tokens from /api/address/encode' });
+        if (body.ids.length > 200_000) return json(res, 413, { ok: false, error: 'ids exceeds 200000 entries' });
+        const decoded = decode(body.ids);
+        return json(res, 200, { ok: true, text: decoded, fingerprint: fingerprint(decoded) });
+      }
+      if (req.url === '/api/address/nearest') {
+        const documents = Array.isArray(body.documents) ? body.documents.slice(0, 200) : [];
+        const k = Math.max(0, Math.min(Number(body.k) || 5, 50));
+        return json(res, 200, { ok: true, ranked: nearest(body.query ?? '', documents, { k }) });
+      }
+      return json(res, 404, { error: 'unknown-address-route', url: req.url });
     }
     if (req.url?.startsWith('/api/agent')) {
       try {

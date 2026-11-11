@@ -66,3 +66,49 @@ separate feature work; this integration covers the Computer, chat and Klein tool
 
 The complete original repositories and historical archives remain upstream;
 this snapshot includes the dependencies used by this mounted application.
+
+## Builder slice (new)
+
+Adds the one loop this snapshot was missing: task → local model edits a real
+project → progress → diff → accept/revert.
+
+- `backend/src/local-model.mjs` — OpenAI-compatible client.
+  Env: `LOCAL_LLM_URL` (default `http://127.0.0.1:8080/v1`),
+  `LOCAL_LLM_MODEL`, `LOCAL_LLM_KEY`.
+- `backend/src/code-agent.mjs` — sandboxed executor. Paths are confined to the
+  project root (symlink-aware), writes are snapshotted for revert, and commands
+  are an allowlist (`node --test`, `npm test`, `npm run <script>`,
+  `python3 -m unittest|pytest`) run with `shell:false`.
+- `backend/src/agent-service.mjs` — job state for the HTTP layer.
+- Routes: `GET /api/agent`, `GET /api/agent/state`,
+  `POST /api/agent/task|accept|revert`.
+  Enabled only when `TRIDENT_PROJECT_ROOT` is set; otherwise the routes return
+  a clear `agent-not-configured` error and the app shows "Builder off".
+- `app/src/main/assets/index.html` — Build tab with task input, live event log,
+  diff, Accept and Revert. `SynthiaClient.java` allows the new routes.
+
+Klein remains the planner. Its output is injected into the executor's system
+prompt as authoritative and is never rewritten by the executor.
+
+## Address engine (new)
+
+`backend/src/address-engine.mjs` replaces the lost ONNX tokenizer with a
+formula: `token = (byte << 4) | (index mod 16)`, giving exactly the legacy
+4096-token vocabulary with no table to lose. Encoding is lossless, tokens carry
+hierarchical addresses, and a byte-level hashed embedding supports dedupe and
+nearest-document lookup. Routes: `/api/address/analyse|encode|decode|nearest`.
+
+The recovered legacy model itself is archived at
+`models/legacy/trident_syntia.onnx` (3,329,873 parameters, 4 blocks, d_model
+128, vocab 4096) with a dependency-free inspector. It is **not** runnable: its
+tokenizer was never exported, and it is not coder weights.
+
+## Not verified here
+
+- APK build: no JDK/Android SDK in this environment, and Google's `aapt2` is
+  x86-64 only on this aarch64 host. `.github/workflows/android.yml` builds on
+  GitHub Actions.
+- On-device runs: the Build tab needs the Node backend reachable at
+  `127.0.0.1:8765`; this snapshot does not bundle a Node runtime into the APK.
+- Model inference: no weights are present. The end-to-end test uses a scripted
+  OpenAI-compatible server, which proves the plumbing, not model quality.

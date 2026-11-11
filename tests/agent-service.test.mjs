@@ -135,3 +135,11 @@ test('android bridge allows the builder routes and the Build screen uses them', 
   assert.ok(html.includes("synthiaRequest('/api/agent/state'"));
   assert.ok(html.includes("go('build'"));
 });
+
+test('android bridge allows the address engine routes', async () => {
+  const here = new URL('..', import.meta.url).pathname;
+  const java = await fs.readFile(path.join(here, 'app/src/main/java/org/stellarproximology/trident/SynthiaClient.java'), 'utf8');
+  for (const route of ['/api/address/analyse', '/api/address/encode', '/api/address/decode', '/api/address/nearest']) {
+    assert.ok(java.includes(`"${route}"`), `missing route in allowlist: ${route}`);
+  }
+});

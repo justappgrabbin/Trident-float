@@ -10,7 +10,7 @@ import java.util.Arrays;
 /** Fixed local backend routes; Android Hands continues to own port 8787. */
 final class SynthiaClient {
     private static final Set<String> GET = new HashSet<>(Arrays.asList("/api/audit", "/api/tools", "/api/state", "/api/agent", "/api/agent/state"));
-    private static final Set<String> POST = new HashSet<>(Arrays.asList("/api/chat", "/api/tools/run", "/api/agent/task", "/api/agent/accept", "/api/agent/revert"));
+    private static final Set<String> POST = new HashSet<>(Arrays.asList("/api/chat", "/api/tools/run", "/api/agent/task", "/api/agent/accept", "/api/agent/revert", "/api/address/analyse", "/api/address/encode", "/api/address/decode", "/api/address/nearest"));
     static String request(String route, String payload) throws IOException {
         boolean post = POST.contains(route);
         if (!post && !GET.contains(route)) throw new IOException("Unsupported Synthia route");
