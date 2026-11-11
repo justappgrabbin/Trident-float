@@ -3,12 +3,21 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { bootTridentComputer } from '../../computer/TridentHost.mjs';
+import { createAgentService } from './agent-service.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(here, '..');
 const publicDir = path.join(rootDir, 'public-generative');
 const host = await bootTridentComputer();
 const { synthia } = host;
+
+/* Klein stays the planner. The executor model only receives its plan. */
+const agents = createAgentService({
+  planner: async task => {
+    const out = await host.chat({ message: task, mode: 'klein', context: { processingMode: 'klein' } });
+    return String(out?.utterance ?? out?.reply ?? '');
+  },
+});
 
 const json = (res, status, value) => {
   res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'access-control-allow-origin': '*' });
@@ -92,6 +101,21 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'POST' && req.url === '/api/browser') {
       const body = await readBody(req);
       return json(res, 200, synthia.browser(body.input ?? body, { ...(body.context ?? {}), addresses: body.addresses ?? body.context?.addresses }));
+    }
+    if (req.url?.startsWith('/api/agent')) {
+      try {
+        if (req.method === 'GET' && req.url === '/api/agent') return json(res, 200, agents.status());
+        if (req.method === 'GET' && req.url === '/api/agent/state') return json(res, 200, agents.state());
+        if (req.method === 'POST' && req.url === '/api/agent/task') {
+          const body = await readBody(req);
+          return json(res, 202, agents.start(body.task));
+        }
+        if (req.method === 'POST' && req.url === '/api/agent/accept') return json(res, 200, agents.accept());
+        if (req.method === 'POST' && req.url === '/api/agent/revert') return json(res, 200, agents.revert());
+        return json(res, 404, { error: 'unknown-agent-route', method: req.method, url: req.url });
+      } catch (error) {
+        return json(res, error?.status ?? 500, { ok: false, error: String(error?.message ?? error) });
+      }
     }
 
     const rel = req.url === '/' ? 'index.html' : req.url.replace(/^\//, '');
