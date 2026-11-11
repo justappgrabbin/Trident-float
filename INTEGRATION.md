@@ -19,9 +19,10 @@ The APK does not bundle Termux or Node.js. This is a phone-local Computer proces
 not a remote desktop requirement. These launch commands still need phone testing.
 
 On desktop, use Node.js 22+ and `npm start`. The backend UI is at
-`http://127.0.0.1:8765`; Android connects to that address on its own device.
-For an emulator connected to a desktop server use `adb reverse tcp:8765 tcp:8765`.
-Android Hands owns 8787, so the Computer server deliberately uses 8765.
+`http://127.0.0.1:8790`; Android connects to that address on its own device.
+For an emulator connected to a desktop server use `adb reverse tcp:8790 tcp:8790`.
+Port 8765 is commonly taken by a local MCP bridge and Android Hands owns 8787,
+so the Computer server deliberately uses 8790.
 
 ## Tools
 
@@ -59,7 +60,7 @@ separate feature work; this integration covers the Computer, chat and Klein tool
 - `backend/`: transitive source dependency snapshot and root tests from
   `justappgrabbin/Generative-address-system`,
   `ce1704d5d53d5729b499463f7eeaf5dcd5091550`.
-  Its server now mounts through `TridentHost` and defaults to 8765.
+  Its server now mounts through `TridentHost` and defaults to 8790.
 - Phone launcher pattern: `justappgrabbin/Synthai2`,
   `cfbe3ee3018c41fc8abe6e1734eee5b630595a3f`,
   `mobile/termux-bootstrap.sh`.
@@ -109,6 +110,6 @@ tokenizer was never exported, and it is not coder weights.
   x86-64 only on this aarch64 host. `.github/workflows/android.yml` builds on
   GitHub Actions.
 - On-device runs: the Build tab needs the Node backend reachable at
-  `127.0.0.1:8765`; this snapshot does not bundle a Node runtime into the APK.
+  `127.0.0.1:8790`; this snapshot does not bundle a Node runtime into the APK.
 - Model inference: no weights are present. The end-to-end test uses a scripted
   OpenAI-compatible server, which proves the plumbing, not model quality.

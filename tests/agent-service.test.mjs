@@ -143,3 +143,25 @@ test('android bridge allows the address engine routes', async () => {
     assert.ok(java.includes(`"${route}"`), `missing route in allowlist: ${route}`);
   }
 });
+
+test('app and backend agree on a port that cannot collide with Hands or an MCP bridge', async () => {
+  const here = new URL('..', import.meta.url).pathname;
+  const java = await fs.readFile(path.join(here, 'app/src/main/java/org/stellarproximology/trident/SynthiaClient.java'), 'utf8');
+  const server = await fs.readFile(path.join(here, 'backend/src/generative-server.mjs'), 'utf8');
+  const javaPort = java.match(/static final int PORT = (\d+)/)?.[1];
+  const serverPort = server.match(/process\.env\.PORT \?\? (\d+)/)?.[1];
+  assert.ok(javaPort, 'Java port constant missing');
+  assert.equal(serverPort, javaPort, 'app and server must use the same default port');
+  assert.ok(!['8765', '8787'].includes(javaPort), 'port collides with Hands (8787) or a common MCP bridge (8765)');
+  assert.ok(java.includes('127.0.0.1:" + PORT'), 'request URL must use the constant');
+});
+
+test('app and server agree on a port that avoids Hands and the MCP bridge', async () => {
+  const here = new URL('..', import.meta.url).pathname;
+  const java = await fs.readFile(path.join(here, 'app/src/main/java/org/stellarproximology/trident/SynthiaClient.java'), 'utf8');
+  const server = await fs.readFile(path.join(here, 'backend/src/generative-server.mjs'), 'utf8');
+  assert.match(java, /int PORT = 8790/);
+  assert.ok(!java.includes('127.0.0.1:8765'), 'app must not target 8765');
+  assert.ok(!java.includes('127.0.0.1:8787'), 'app must not target Hands on 8787');
+  assert.match(server, /process\.env\.PORT \?\? 8790/);
+});

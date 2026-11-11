@@ -160,7 +160,7 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-const port = Number(process.env.PORT ?? 8765);
+const port = Number(process.env.PORT ?? 8790);
 server.listen(port, '127.0.0.1', () => console.log(`Synthia Generative Assembly: http://127.0.0.1:${server.address().port}`));
 
 
