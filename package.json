@@ -1,0 +1,10 @@
+{
+  "name": "trident-synthai-computer",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node backend/src/generative-server.mjs",
+    "test": "node --test tests/*.test.mjs && npm test --prefix backend"
+  }
+}

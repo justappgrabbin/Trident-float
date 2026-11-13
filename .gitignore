@@ -1,0 +1,6 @@
+workspace/
+.gradle/
+**/build/
+local.properties
+node_modules/
+backend/extensions/generative-address-morphology/state/

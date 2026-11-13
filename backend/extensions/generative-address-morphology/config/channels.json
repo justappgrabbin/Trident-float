@@ -1,0 +1,650 @@
+[
+  {
+    "id": "ch-01-08",
+    "gates": [
+      1,
+      8
+    ],
+    "name": "Inspiration",
+    "energy": "INSPIRATION",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-02-14",
+    "gates": [
+      2,
+      14
+    ],
+    "name": "The Beat",
+    "energy": "THE_BEAT",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-03-60",
+    "gates": [
+      3,
+      60
+    ],
+    "name": "Mutation",
+    "energy": "MUTATION",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-04-63",
+    "gates": [
+      4,
+      63
+    ],
+    "name": "Logic",
+    "energy": "LOGIC",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-05-15",
+    "gates": [
+      5,
+      15
+    ],
+    "name": "Rhythm",
+    "energy": "RHYTHM",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-06-59",
+    "gates": [
+      6,
+      59
+    ],
+    "name": "Intimacy",
+    "energy": "INTIMACY",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-07-31",
+    "gates": [
+      7,
+      31
+    ],
+    "name": "Alpha",
+    "energy": "ALPHA",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-09-52",
+    "gates": [
+      9,
+      52
+    ],
+    "name": "Concentration",
+    "energy": "CONCENTRATION",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-10-20",
+    "gates": [
+      10,
+      20
+    ],
+    "name": "Awakening",
+    "energy": "AWAKENING",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-10-34",
+    "gates": [
+      10,
+      34
+    ],
+    "name": "Exploration",
+    "energy": "EXPLORATION",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-10-57",
+    "gates": [
+      10,
+      57
+    ],
+    "name": "Perfected Form",
+    "energy": "PERFECTED_FORM",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-11-56",
+    "gates": [
+      11,
+      56
+    ],
+    "name": "Curiosity",
+    "energy": "CURIOSITY",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-12-22",
+    "gates": [
+      12,
+      22
+    ],
+    "name": "Openness",
+    "energy": "OPENNESS",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-13-33",
+    "gates": [
+      13,
+      33
+    ],
+    "name": "Prodigal",
+    "energy": "PRODIGAL",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-16-48",
+    "gates": [
+      16,
+      48
+    ],
+    "name": "Wavelength",
+    "energy": "WAVELENGTH",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-17-62",
+    "gates": [
+      17,
+      62
+    ],
+    "name": "Acceptance",
+    "energy": "ACCEPTANCE",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-18-58",
+    "gates": [
+      18,
+      58
+    ],
+    "name": "Judgment",
+    "energy": "JUDGMENT",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-19-49",
+    "gates": [
+      19,
+      49
+    ],
+    "name": "Synthesis",
+    "energy": "SYNTHESIS",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-20-34",
+    "gates": [
+      20,
+      34
+    ],
+    "name": "Charisma",
+    "energy": "CHARISMA",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-20-57",
+    "gates": [
+      20,
+      57
+    ],
+    "name": "Brainwave",
+    "energy": "BRAINWAVE",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-21-45",
+    "gates": [
+      21,
+      45
+    ],
+    "name": "Money",
+    "energy": "MONEY",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-23-43",
+    "gates": [
+      23,
+      43
+    ],
+    "name": "Structuring",
+    "energy": "STRUCTURING",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-24-61",
+    "gates": [
+      24,
+      61
+    ],
+    "name": "Awareness",
+    "energy": "AWARENESS",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-25-51",
+    "gates": [
+      25,
+      51
+    ],
+    "name": "Initiation",
+    "energy": "INITIATION",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-26-44",
+    "gates": [
+      26,
+      44
+    ],
+    "name": "Surrender",
+    "energy": "SURRENDER",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-27-50",
+    "gates": [
+      27,
+      50
+    ],
+    "name": "Preservation",
+    "energy": "PRESERVATION",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-28-38",
+    "gates": [
+      28,
+      38
+    ],
+    "name": "Struggle",
+    "energy": "STRUGGLE",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-29-46",
+    "gates": [
+      29,
+      46
+    ],
+    "name": "Discovery",
+    "energy": "DISCOVERY",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-30-41",
+    "gates": [
+      30,
+      41
+    ],
+    "name": "Recognition",
+    "energy": "RECOGNITION",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-32-54",
+    "gates": [
+      32,
+      54
+    ],
+    "name": "Transformation",
+    "energy": "TRANSFORMATION",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-34-57",
+    "gates": [
+      34,
+      57
+    ],
+    "name": "Power",
+    "energy": "POWER",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-35-36",
+    "gates": [
+      35,
+      36
+    ],
+    "name": "Transitoriness",
+    "energy": "TRANSITORINESS",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-37-40",
+    "gates": [
+      37,
+      40
+    ],
+    "name": "Community",
+    "energy": "COMMUNITY",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-39-55",
+    "gates": [
+      39,
+      55
+    ],
+    "name": "Emoting",
+    "energy": "EMOTING",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-42-53",
+    "gates": [
+      42,
+      53
+    ],
+    "name": "Maturation",
+    "energy": "MATURATION",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  },
+  {
+    "id": "ch-47-64",
+    "gates": [
+      47,
+      64
+    ],
+    "name": "Abstraction",
+    "energy": "ABSTRACTION",
+    "status": "established",
+    "provenance": [
+      "project-established Human Design channel pair",
+      "donor cross-check: Neural-Network-Builder / Generative-Morph-Chat where present"
+    ],
+    "morphology": {
+      "implementation": "deterministic-generic",
+      "evidenceStatus": "experimental"
+    }
+  }
+]

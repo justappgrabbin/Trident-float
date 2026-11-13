@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "dominanceMetric": {
+    "status": "experimental",
+    "description": "Transparent default until source-decoded dominance law replaces it.",
+    "coverageWeight": 0.55,
+    "expressionWeight": 0.3,
+    "persistenceWeight": 0.15
+  },
+  "dissolveWhenConditionsFail": true,
+  "podRule": "graphs sharing at least one participating addressed node belong to the same local assembly"
+}

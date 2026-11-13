@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthia · Structural views</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="structure.css"></head>
+<body><main>
+  <header><div><div class="eyebrow">SYNTHIA · STRUCTURAL FOUNDATION</div><h1>Views of the same structure</h1><p>The starting question and viewing position are separate from the chart being read.</p><a href="/">Return to chat</a></div><div id="status" class="pill" role="status">Connecting…</div></header>
+  <section class="panel">
+    <form id="structureForm">
+      <div class="controls">
+        <label>Source chart<select id="view"><option value="being">Being · ordinal / phase space</option><option value="motivation">Motivation · Color / Tone / Base</option><option value="movement">Crystals and Monopole</option><option value="evolution">Macrocosmic / Microcosmic</option><option value="design">Four fields and components</option><option value="space">Three conditions / emergent Space</option></select></label>
+        <label>Starting question<select id="question"><option value="">Unspecified</option><option>who</option><option>what</option><option>where</option><option>when</option><option>why</option></select></label>
+        <label>Governing field<select id="governing"><option value="">Unspecified</option><option>Movement</option><option>Evolution</option><option>Being</option><option>Design</option><option>Space</option></select></label>
+        <label>Contextual example<select id="example"><option value="jut">M/E/B/I topology</option><option value="song">When the 5 is a Song</option></select></label>
+        <label>Active contribution filter<select id="active"><option value="observed">Deduce from input words</option><option value="all">All four fields</option><option value="reduced">Mind + Individuality only</option></select></label>
+        <label>Recursive levels<select id="depth"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label>
+      </div>
+      <label>Words entering the structure<textarea id="subject">Mind Love Ego Life Body Geometry Individuality Landscape</textarea></label>
+      <div id="coordinateControls" class="controls" hidden>
+        <label>Color<input id="color" type="number" min="1" max="6" placeholder="unspecified"></label>
+        <label>Tone<input id="tone" type="number" min="1" max="6" placeholder="unspecified"></label>
+        <label>Base<input id="base" type="number" min="1" max="5" placeholder="unspecified"></label>
+      </div>
+      <div class="actions"><button type="submit">Read structure</button><label class="toggle"><input id="flip" type="checkbox">Reverse diagram’s vertical viewing orientation</label></div>
+    </form>
+    <p class="muted">Reference layout from the supplied graph. Other perspective transformations and the exact letter paths remain to be established. The controls do not infer a universal mapping between questions and fields.</p>
+  </section>
+  <div id="error" role="alert"></div>
+  <section class="grid structuralGrid">
+    <article class="panel"><h2>Field interplay</h2><svg id="graph" viewBox="0 0 760 490" role="img" aria-label="Four contributing fields and emergent Space"></svg><p id="spaceState" aria-live="polite"></p><p id="capacity"></p></article>
+    <article class="panel"><h2>Reading and provenance</h2><p id="frame"></p><h3>Workers deduced for this input</h3><div id="agents"></div><h3>Coordinate meanings</h3><pre id="meanings"></pre></article>
+  </section>
+  <section class="panel"><h2>All five fields in this source chart</h2><div id="fields"></div><div id="tables"></div><details><summary>Unresolved rules and full trace</summary><pre id="trace"></pre></details></section>
+</main><script type="module" src="structure.js"></script></body></html>
+

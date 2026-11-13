@@ -2,7 +2,8 @@ name: Build Trident APK
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ main, "codex/**" ]
+  pull_request:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,8 +16,13 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
       - run: gradle :app:assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: Trident-APK
           path: app/build/outputs/apk/debug/app-debug.apk
+

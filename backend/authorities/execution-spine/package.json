@@ -1,0 +1,12 @@
+{
+  "name": "synthia-universal-execution-spine",
+  "version": "0.4.1",
+  "private": true,
+  "type": "module",
+  "description": "Pure-JavaScript Synthia organism + universal execution spine with mandatory witnessed Klein context evaluation wired into live tool chains and contact paths.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "demo": "node examples/demo.mjs"
+  }
+}
+

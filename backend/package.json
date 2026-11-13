@@ -1,0 +1,11 @@
+{
+  "name": "synthia-generative-address-morphology-integrated",
+  "version": "0.2.1",
+  "private": true,
+  "type": "module",
+  "description": "Pure Synthia Integrated Assembly v0.4.2 with additive Generative Address & Morphology plus explicit Communication / Klein / Morph chat processing modes.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "start:generative": "node src/generative-server.mjs"
+  }
+}
